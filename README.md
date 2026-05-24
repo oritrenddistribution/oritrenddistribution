@@ -21,7 +21,7 @@ With our streamlined process and competitive pricing, you can have your music on
 - **Deezer**
 - **Amazon Music**
 - **Tidal**
-- **And 50+ more platforms**
+- **And 150+ more platforms**
 
 ## 💎 Why Choose Oritrend Distribution?
 
