@@ -64,9 +64,10 @@
     }
 
     .logo img {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      border-radius: 8px;
+      object-fit: contain;
     }
 
     .nav-links {
@@ -115,12 +116,13 @@
     }
 
     .hero img {
-      width: 150px;
-      height: 150px;
+      width: 180px;
+      height: 180px;
       margin-bottom: 2rem;
-      border-radius: 50%;
+      border-radius: 12px;
       border: 3px solid var(--primary-color);
       animation: float 3s ease-in-out infinite;
+      object-fit: contain;
     }
 
     @keyframes float {
@@ -575,7 +577,8 @@
     }
 
     .form-group input,
-    .form-group textarea {
+    .form-group textarea,
+    .form-group select {
       width: 100%;
       padding: 0.75rem;
       background: var(--secondary-bg);
@@ -587,7 +590,8 @@
     }
 
     .form-group input:focus,
-    .form-group textarea:focus {
+    .form-group textarea:focus,
+    .form-group select:focus {
       outline: none;
       border-color: var(--primary-color);
       box-shadow: 0 0 10px rgba(255, 140, 0, 0.2);
@@ -739,7 +743,7 @@
     <h1 style="margin-top: -1rem;">Reach the World</h1>
     <p class="tagline">Distribute your music to 150+ countries across Spotify, Apple Music, TikTok, and 50+ streaming platforms—in just days.</p>
     <div class="cta-buttons">
-      <a href="#contact" class="btn btn-primary">Start Distributing</a>
+      <a href="#pricing" class="btn btn-primary">View Pricing</a>
       <a href="#about" class="btn btn-secondary">Learn More</a>
     </div>
   </section>
@@ -750,7 +754,7 @@
     <div class="about-content">
       <div class="about-text">
         <h3>Your Gateway to Global Music Success</h3>
-        <p>At Oritrend Distribution, we believe every artist deserves a platform to shine. Founded on the principle that talent shouldn't be limited by geography or budget, we've created a streamlined, artist-centric music distribution platform.</p>
+        <p>At Oritrend Distribution, we believe every artist deserves a platform to shine. Founded on the principle that talent shouldn't be limited by geography or budget, we've created a streaming distribution service that makes it easy for independent musicians to reach millions of listeners worldwide.</p>
         <p>Whether you're a bedroom producer, an emerging talent, or an established independent artist, we provide the tools and support to get your music heard by millions worldwide.</p>
         <p>Our mission is simple: democratize music distribution. No hidden fees. No commission on your earnings. Just you, your music, and the world.</p>
       </div>
@@ -762,7 +766,7 @@
           </div>
           <div class="feature-card">
             <h4>💰 Zero Commission</h4>
-            <p>Keep 100% of your streaming revenue. We only charge a one-time distribution fee.</p>
+            <p>Keep 100% of your streaming revenue. We only charge a one-time yearly subscription fee.</p>
           </div>
           <div class="feature-card">
             <h4>🌍 Global Reach</h4>
@@ -786,16 +790,16 @@
         <p>Track streams, downloads, and earnings across all platforms in one dashboard. Know exactly how your music is performing.</p>
       </div>
       <div class="feature-card">
-        <h4>🎯 Smart Release Strategy</h4>
-        <p>Pre-save campaigns, playlist pitching, and release scheduling to maximize your reach from day one.</p>
+        <h4>🎯 Personal Artist Dashboard</h4>
+        <p>Get instant access to your artist dashboard after subscription. Upload and manage your songs directly yourself.</p>
       </div>
       <div class="feature-card">
         <h4>🆘 24/7 Artist Support</h4>
         <p>Our dedicated support team is always available to help with technical issues, metadata updates, or platform questions.</p>
       </div>
       <div class="feature-card">
-        <h4>🎵 Unlimited Uploads</h4>
-        <p>On Pro and Label plans, distribute as many songs as you want with no restrictions.</p>
+        <h4>🎵 Self-Upload Portal</h4>
+        <p>Own your dashboard and upload your songs yourself. No waiting for approval—start distributing immediately.</p>
       </div>
       <div class="feature-card">
         <h4>🌟 African Music Specialists</h4>
@@ -829,15 +833,17 @@
   <!-- Pricing Section -->
   <section class="pricing" id="pricing">
     <h2>Simple, Transparent Pricing</h2>
-    <p style="text-align: center; color: #cccccc; margin-bottom: 2rem;">Choose a plan that fits your needs. No hidden fees, no commission on earnings.</p>
+    <p style="text-align: center; color: #cccccc; margin-bottom: 2rem;">Yearly subscription plans. Start uploading directly to your personal dashboard after subscription!</p>
     <div class="pricing-grid">
       <div class="pricing-card">
-        <h3>Starter</h3>
+        <h3>Artist</h3>
         <div class="price">$9.99</div>
-        <div class="price-period">one-time payment</div>
+        <div class="price-period">yearly subscription</div>
         <ul class="features-list">
-          <li>1 Single Release</li>
+          <li>5 Track Releases/Year</li>
           <li>All Streaming Platforms</li>
+          <li>Personal Artist Dashboard</li>
+          <li>Direct Self-Upload Portal</li>
           <li>Basic Analytics</li>
           <li>Email Support</li>
           <li>Music stays live forever</li>
@@ -846,48 +852,38 @@
       </div>
 
       <div class="pricing-card featured">
-        <h3>Artist</h3>
-        <div class="price">$24.99</div>
-        <div class="price-period">one-time payment</div>
+        <h3>Pro</h3>
+        <div class="price">$19.99</div>
+        <div class="price-period">yearly subscription</div>
         <ul class="features-list">
-          <li>5 Track Releases</li>
+          <li>Unlimited Annual Releases</li>
           <li>All Streaming Platforms</li>
-          <li>Detailed Analytics</li>
+          <li>Pro Artist Dashboard</li>
+          <li>Advanced Self-Upload Portal</li>
+          <li>Advanced Analytics</li>
           <li>Priority Email Support</li>
-          <li>Metadata Editing</li>
+          <li>Playlist Pitching Tools</li>
           <li>Music stays live forever</li>
         </ul>
         <a href="#contact" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Choose Plan</a>
       </div>
 
       <div class="pricing-card">
-        <h3>Pro</h3>
+        <h3>Label</h3>
         <div class="price">$49.99</div>
-        <div class="price-period">one-time payment</div>
+        <div class="price-period">yearly subscription</div>
         <ul class="features-list">
           <li>Unlimited Releases</li>
           <li>All Streaming Platforms</li>
-          <li>Advanced Analytics</li>
+          <li>Label Management Dashboard</li>
+          <li>Multi-Artist Management</li>
+          <li>Advanced Analytics & Reports</li>
           <li>24/7 Priority Support</li>
-          <li>Playlist Pitching</li>
-          <li>Music stays live forever</li>
-        </ul>
-        <a href="#contact" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Upgrade</a>
-      </div>
-
-      <div class="pricing-card">
-        <h3>Label</h3>
-        <div class="price">Custom</div>
-        <div class="price-period">contact us</div>
-        <ul class="features-list">
-          <li>Bulk Distribution</li>
-          <li>White-Label Solutions</li>
           <li>API Access</li>
           <li>Dedicated Account Manager</li>
-          <li>Custom Analytics</li>
-          <li>Flexible Terms</li>
+          <li>Music stays live forever</li>
         </ul>
-        <a href="#contact" class="btn btn-secondary" style="width: 100%; margin-top: 1rem;">Contact Us</a>
+        <a href="#contact" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Contact Us</a>
       </div>
     </div>
   </section>
@@ -898,21 +894,21 @@
     <div class="testimonials-grid">
       <div class="testimonial-card">
         <div class="stars">⭐⭐⭐⭐⭐</div>
-        <p class="testimonial-text">"Oritrend made distributing my music so easy! My first single got on Spotify within 3 days. Highly recommended for independent artists!"</p>
+        <p class="testimonial-text">"Oritrend made distributing my music so easy! My first single got on Spotify within 3 days. The dashboard is intuitive and I uploaded everything myself!"</p>
         <p class="artist-name">Amara Williams</p>
         <p class="artist-title">Independent Artist, Nigeria</p>
       </div>
 
       <div class="testimonial-card">
         <div class="stars">⭐⭐⭐⭐⭐</div>
-        <p class="testimonial-text">"The customer support is amazing. They helped me update my metadata and everything was resolved in minutes. Best distribution service!"</p>
+        <p class="testimonial-text">"Finally a platform where I own my dashboard! I can upload, edit, and manage all my songs directly. Best experience ever!"</p>
         <p class="artist-name">Marcus Johnson</p>
         <p class="artist-title">Hip-Hop Producer, USA</p>
       </div>
 
       <div class="testimonial-card">
         <div class="stars">⭐⭐⭐⭐⭐</div>
-        <p class="testimonial-text">"I've distributed with other platforms, but Oritrend is the fastest and most affordable. I keep 100% of my earnings!"</p>
+        <p class="testimonial-text">"I've distributed with other platforms, but Oritrend is the fastest and most affordable. I keep 100% of my earnings and I have full control!"</p>
         <p class="artist-name">Zainab Hassan</p>
         <p class="artist-title">Afrobeats Artist, Kenya</p>
       </div>
@@ -926,14 +922,14 @@
 
       <div class="testimonial-card">
         <div class="stars">⭐⭐⭐⭐⭐</div>
-        <p class="testimonial-text">"Finally, a distribution service that understands African artists. Boomplay integration is seamless!"</p>
+        <p class="testimonial-text">"Finally, a distribution service that understands African artists. The dashboard is brilliant and Boomplay integration is seamless!"</p>
         <p class="artist-name">Blessing Okonkwo</p>
         <p class="artist-title">Afrobeats Producer, Ghana</p>
       </div>
 
       <div class="testimonial-card">
         <div class="stars">⭐⭐⭐⭐⭐</div>
-        <p class="testimonial-text">"The analytics dashboard is incredible. I can see exactly where my streams are coming from. Worth every penny!"</p>
+        <p class="testimonial-text">"The analytics dashboard is incredible. I can see exactly where my streams are coming from and manage everything myself. Worth every penny!"</p>
         <p class="artist-name">Sofia Rodriguez</p>
         <p class="artist-title">Latin Artist, Spain</p>
       </div>
@@ -946,11 +942,21 @@
     <div style="max-width: 800px; margin: 2rem auto;">
       <div class="faq-item active">
         <div class="faq-question">
+          <span>When can I start uploading my songs?</span>
+          <span class="faq-toggle">⌄</span>
+        </div>
+        <div class="faq-answer">
+          Immediately after subscription! You'll get instant access to your personal artist dashboard. No waiting for approval. Upload your songs directly and start distributing right away.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
           <span>How quickly will my music be distributed to streaming platforms?</span>
           <span class="faq-toggle">⌄</span>
         </div>
         <div class="faq-answer">
-          Your music will typically be live within 2-5 business days on most platforms. Spotify and Apple Music may take up to 2 weeks for official playlist consideration, but your music will be available for listeners immediately. We expedite the process as much as possible to get your work in front of your audience quickly.
+          Your music will typically be live within 2-5 business days on most platforms. Spotify and Apple Music may take up to 2 weeks for official playlist consideration, but your music will be available for streaming immediately.
         </div>
       </div>
 
@@ -960,7 +966,7 @@
           <span class="faq-toggle">⌄</span>
         </div>
         <div class="faq-answer">
-          No! We never take a commission on your earnings. We charge a one-time distribution fee, and 100% of your streaming revenue from Spotify, Apple Music, and all other platforms goes directly to you. What you earn is yours to keep.
+          No! We never take a commission on your earnings. We charge a yearly subscription fee, and 100% of your streaming revenue from Spotify, Apple Music, and all other platforms goes directly to you. What you earn is what you keep!
         </div>
       </div>
 
@@ -970,7 +976,7 @@
           <span class="faq-toggle">⌄</span>
         </div>
         <div class="faq-answer">
-          Yes! You can edit your song title, artist name, artwork, features, lyrics, and other metadata anytime before your music goes live. Once it's live on streaming platforms, some changes may take time to update across all services, but we'll help you manage this process smoothly.
+          Yes! You can edit your song title, artist name, artwork, features, lyrics, and other metadata anytime through your personal dashboard before your music goes live. Once it's live on streaming platforms, some changes may require resubmission.
         </div>
       </div>
 
@@ -980,7 +986,7 @@
           <span class="faq-toggle">⌄</span>
         </div>
         <div class="faq-answer">
-          It depends on your plan! The Starter plan allows 1 single per submission. The Artist plan allows up to 5 tracks. The Pro and Label plans have unlimited releases with no restrictions. You can distribute as much as you want, whenever you want.
+          It depends on your plan! The Artist plan allows up to 5 tracks per year. The Pro plan has unlimited releases with no restrictions. The Label plan also offers unlimited releases. You can upload and manage as many songs as you want on Pro and Label plans!
         </div>
       </div>
 
@@ -990,7 +996,17 @@
           <span class="faq-toggle">⌄</span>
         </div>
         <div class="faq-answer">
-          We thoroughly review all submissions before distribution. If there are any copyright concerns or policy violations, we'll notify you immediately and work with you to resolve them. Our 24/7 support team provides guidance on proper metadata, rights clearance, and content policies to ensure your music gets approved.
+          We thoroughly review all submissions before distribution. If there are any copyright concerns or policy violations, we'll notify you immediately through your dashboard and work with you to resolve them. Our 24/7 support team is here to help!
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Can I upgrade or downgrade my subscription plan?</span>
+          <span class="faq-toggle">⌄</span>
+        </div>
+        <div class="faq-answer">
+          Yes! You can upgrade to a higher plan at any time to access more features. Contact our support team for downgrade requests and we'll work with you.
         </div>
       </div>
     </div>
@@ -998,65 +1014,35 @@
 
   <!-- Blog Section -->
   <section class="blog" id="blog">
-    <h2>Music Distribution Guides & Tips</h2>
+    <h2>Music Distribution Tips & Insights</h2>
     <div class="blog-grid">
       <div class="blog-card">
-        <div class="blog-image">📝</div>
+        <div class="blog-image">🎵</div>
         <div class="blog-content">
-          <div class="blog-date">May 24, 2026</div>
-          <h3>How to Prepare Your Music for Distribution: A Complete Guide</h3>
-          <p>Learn the essential steps to get your music ready for release. From mastering to artwork specifications, we cover everything you need to know.</p>
-          <a href="#" class="read-more">Read More →</a>
-        </div>
-      </div>
-
-      <div class="blog-card">
-        <div class="blog-image">🎯</div>
-        <div class="blog-content">
-          <div class="blog-date">May 22, 2026</div>
-          <h3>Maximizing Your Spotify Streams: Strategies for Independent Artists</h3>
-          <p>Discover proven tactics to grow your listener base on Spotify, from playlist pitching to social media promotion strategies.</p>
-          <a href="#" class="read-more">Read More →</a>
-        </div>
-      </div>
-
-      <div class="blog-card">
-        <div class="blog-image">🌍</div>
-        <div class="blog-content">
-          <div class="blog-date">May 20, 2026</div>
-          <h3>Breaking Into African Music Streaming Platforms: A Guide to Boomplay & Audiomack</h3>
-          <p>African music is booming globally. Learn how to optimize your presence on Boomplay and Audiomack to reach millions of listeners.</p>
-          <a href="#" class="read-more">Read More →</a>
-        </div>
-      </div>
-
-      <div class="blog-card">
-        <div class="blog-image">💰</div>
-        <div class="blog-content">
-          <div class="blog-date">May 18, 2026</div>
-          <h3>Understanding Streaming Revenue: How Much Do Artists Really Earn?</h3>
-          <p>Break down the numbers and understand exactly how much you can expect to earn from your music on different streaming platforms.</p>
-          <a href="#" class="read-more">Read More →</a>
-        </div>
-      </div>
-
-      <div class="blog-card">
-        <div class="blog-image">🎨</div>
-        <div class="blog-content">
-          <div class="blog-date">May 16, 2026</div>
-          <h3>The Art of Album Artwork: Design Tips That Get Noticed</h3>
-          <p>Your album cover is often the first thing listeners see. Get professional design tips to create artwork that stands out and gets saved.</p>
-          <a href="#" class="read-more">Read More →</a>
+          <div class="blog-date">May 20, 2024</div>
+          <h3>How to Prepare Your First Music Release</h3>
+          <p>Learn the essential steps to prepare your debut single for distribution. From mixing to metadata, we cover everything you need to know.</p>
+          <a href="#blog" class="read-more">Read More →</a>
         </div>
       </div>
 
       <div class="blog-card">
         <div class="blog-image">🚀</div>
         <div class="blog-content">
-          <div class="blog-date">May 14, 2026</div>
-          <h3>From Zero to Hero: A Roadmap for Emerging Independent Artists</h3>
-          <p>Starting your music career? Follow this step-by-step roadmap to build your brand, release music, and grow your fanbase from scratch.</p>
-          <a href="#" class="read-more">Read More →</a>
+          <div class="blog-date">May 15, 2024</div>
+          <h3>Maximizing Your Spotify Success</h3>
+          <p>Discover strategies to get your music on Spotify playlists and increase your streaming numbers. Our expert tips will help you reach more listeners.</p>
+          <a href="#blog" class="read-more">Read More →</a>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-image">🌍</div>
+        <div class="blog-content">
+          <div class="blog-date">May 10, 2024</div>
+          <h3>Going Global: African Artists on the World Stage</h3>
+          <p>Learn how African artists are breaking barriers and gaining international recognition. We highlight success stories and best practices.</p>
+          <a href="#blog" class="read-more">Read More →</a>
         </div>
       </div>
     </div>
@@ -1064,45 +1050,42 @@
 
   <!-- Contact Section -->
   <section class="contact" id="contact">
-    <h2>Ready to Distribute Your Music?</h2>
-    <p style="color: #cccccc; margin-bottom: 2rem;">Fill out the form below and our team will get back to you within 24 hours</p>
-    
+    <h2>Ready to Share Your Music with the World?</h2>
+    <p style="color: #cccccc; margin-bottom: 2rem;">Subscribe now and get instant access to your artist dashboard. Start uploading your songs immediately!</p>
     <div class="contact-form">
       <form>
         <div class="form-group">
-          <label for="name">Full Name</label>
+          <label for="name">Your Name *</label>
           <input type="text" id="name" name="name" required>
         </div>
-        
+
         <div class="form-group">
-          <label for="email">Email Address</label>
+          <label for="email">Email Address *</label>
           <input type="email" id="email" name="email" required>
         </div>
-        
+
         <div class="form-group">
-          <label for="artist">Artist/Stage Name</label>
+          <label for="artist">Artist Name *</label>
           <input type="text" id="artist" name="artist" required>
         </div>
-        
+
         <div class="form-group">
-          <label for="country">Country</label>
-          <input type="text" id="country" name="country">
+          <label for="plan">Which plan interests you? *</label>
+          <select id="plan" name="plan" required>
+            <option value="">Select a plan</option>
+            <option value="artist">Artist - $9.99/year</option>
+            <option value="pro">Pro - $19.99/year</option>
+            <option value="label">Label - $49.99/year</option>
+          </select>
         </div>
-        
+
         <div class="form-group">
           <label for="message">Tell us about your music</label>
-          <textarea id="message" name="message" required></textarea>
+          <textarea id="message" name="message" placeholder="Share your music style, goals, or any questions..."></textarea>
         </div>
-        
-        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Your Music</button>
-      </form>
-    </div>
 
-    <div style="margin-top: 3rem; padding: 2rem; background: #1a1a1a; border-radius: 10px; border: 1px solid #333;">
-      <h3 style="margin-bottom: 1rem;">Other Ways to Reach Us</h3>
-      <p>📧 <strong>Email:</strong> <a href="mailto:oritrenddistribution@gmail.com" style="color: var(--primary-color); text-decoration: none;">oritrenddistribution@gmail.com</a></p>
-      <p>📱 <strong>WhatsApp:</strong> Contact us for quick responses (coming soon)</p>
-      <p style="color: #888; margin-top: 1rem; font-size: 0.9rem;">Response time: Usually within 24 hours</p>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Subscribe Now</button>
+      </form>
     </div>
   </section>
 
@@ -1113,109 +1096,78 @@
         <h4>About Oritrend</h4>
         <ul>
           <li><a href="#about">About Us</a></li>
-          <li><a href="#features">Our Features</a></li>
+          <li><a href="#features">Features</a></li>
           <li><a href="#pricing">Pricing</a></li>
           <li><a href="#blog">Blog</a></li>
         </ul>
       </div>
 
       <div class="footer-section">
-        <h4>Resources</h4>
+        <h4>Quick Links</h4>
         <ul>
+          <li><a href="#platforms">Supported Platforms</a></li>
+          <li><a href="#testimonials">Success Stories</a></li>
           <li><a href="#faq">FAQ</a></li>
-          <li><a href="#">Music Distribution Guide</a></li>
-          <li><a href="#">Artist Resources</a></li>
-          <li><a href="#">Contact Support</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
         </ul>
       </div>
 
       <div class="footer-section">
         <h4>Legal</h4>
         <ul>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
-          <li><a href="#">Copyright Policy</a></li>
-          <li><a href="#">Cookie Policy</a></li>
+          <li><a href="terms-of-service.html">Terms of Service</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="#contact">Contact Us</a></li>
         </ul>
       </div>
 
       <div class="footer-section">
-        <h4>Follow Us</h4>
-        <p>Stay updated on music distribution tips and artist success stories</p>
+        <h4>Connect With Us</h4>
+        <p style="color: #cccccc; margin-bottom: 1rem;">Follow us on social media for updates and music tips.</p>
         <div class="social-links">
-          <a href="https://twitter.com/oritrenddist" title="Twitter">𝕏</a>
-          <a href="https://instagram.com/oritrenddist" title="Instagram">📸</a>
-          <a href="https://tiktok.com/@oritrenddist" title="TikTok">🎵</a>
-          <a href="https://youtube.com/@oritrenddist" title="YouTube">▶️</a>
+          <a href="https://twitter.com" title="Twitter" target="_blank">𝕏</a>
+          <a href="https://instagram.com" title="Instagram" target="_blank">📷</a>
+          <a href="https://tiktok.com" title="TikTok" target="_blank">🎵</a>
+          <a href="https://youtube.com" title="YouTube" target="_blank">▶️</a>
         </div>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; 2026 Oritrend Distribution. All rights reserved. | Empowering Independent Artists Worldwide</p>
+      <p>&copy; 2024 Oritrend Distribution. All rights reserved. | <strong>Email:</strong> oritrenddistribution@gmail.com</p>
+      <p style="margin-top: 1rem; font-size: 0.9rem;">Empowering independent artists worldwide 🌍🎵</p>
     </div>
   </footer>
 
   <script>
-    // Mobile menu toggle
-    document.querySelector('.menu-toggle').addEventListener('click', function() {
-      const navLinks = document.querySelector('.nav-links');
+    // FAQ Toggle
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      question.addEventListener('click', () => {
+        faqItems.forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+      });
+    });
+
+    // Mobile Menu Toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', () => {
       navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
     });
 
-    // FAQ Accordion
-    document.querySelectorAll('.faq-question').forEach(question => {
-      question.addEventListener('click', function() {
-        const item = this.parentElement;
-        item.classList.toggle('active');
-        
-        // Close other items
-        document.querySelectorAll('.faq-item').forEach(faq => {
-          if (faq !== item) {
-            faq.classList.remove('active');
-          }
-        });
-      });
-    });
-
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-      link.addEventListener('click', function(e) {
+    // Form Submission
+    const contactForm = document.querySelector('.contact-form form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
+        alert('Thank you for your interest! Our team will contact you soon.');
+        contactForm.reset();
       });
-    });
-
-    // Form submission
-    document.querySelector('.contact-form form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('Thank you for your submission! We will contact you soon.');
-      this.reset();
-    });
-
-    // Active nav link on scroll
-    window.addEventListener('scroll', function() {
-      let current = '';
-      const sections = document.querySelectorAll('section');
-      
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (scrollY >= sectionTop - 200) {
-          current = section.getAttribute('id');
-        }
-      });
-
-      document.querySelectorAll('.nav-links a').forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').slice(1) === current) {
-          link.classList.add('active');
-        }
-      });
-    });
+    }
   </script>
 
 </body>
+
 </html>
