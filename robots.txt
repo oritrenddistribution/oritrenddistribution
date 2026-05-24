@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+Allow: /oritrenddistribution/
+
+Sitemap: https://oritrenddistribution.github.io/oritrenddistribution/sitemap.xml
+
+# Disallow crawling of sensitive pages
+Disallow: /admin/
+Disallow: /private/
+
+# Specific rules
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
