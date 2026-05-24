@@ -1,92 +1,1221 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="TsGtNAjbFE-J3u740xiXGfyjqAMdGkrirIKF3aT_O0w" />
-  <title>Oritrend Distribution - Music Distribution Platform</title>
-  <meta name="description" content="Oritrend Distribution helps independent artists distribute music to Spotify, Apple Music, TikTok, Boomplay, Audiomack, YouTube Music and more.">
-  <meta name="keywords" content="music distribution, Spotify distribution, Apple Music distribution, TikTok music distribution, Boomplay distribution, African music distribution, independent artists">
+  <title>Oritrend Distribution - Music Distribution Platform for Independent Artists</title>
+  <meta name="description" content="Distribute your music globally on Spotify, Apple Music, TikTok, Boomplay, and 50+ platforms. Fast, affordable, and artist-focused music distribution.">
+  <meta name="keywords" content="music distribution, Spotify distribution, Apple Music, TikTok music, Boomplay, independent artists, African music distribution, global music distribution">
+  <meta name="author" content="Oritrend Distribution">
+  <meta property="og:title" content="Oritrend Distribution - Empower Your Music, Reach the World">
+  <meta property="og:description" content="Distribute your music to 150+ countries in days. Affordable pricing, zero commission on earnings.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://oritrenddistribution.github.io/oritrenddistribution/">
+  <link rel="icon" type="image/png" href="favicon.png">
   <style>
-    body{
-      background:black;
-      color:white;
-      font-family:Arial;
-      text-align:center;
-      padding:40px;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    h1{
-      color:orange;
-      font-size:50px;
+    :root {
+      --primary-color: #ff8c00;
+      --dark-bg: #0a0a0a;
+      --light-text: #ffffff;
+      --accent-color: #ff6b35;
+      --secondary-bg: #1a1a1a;
     }
 
-    p{
-      font-size:20px;
+    html {
+      scroll-behavior: smooth;
     }
 
-    .button{
-      background:orange;
-      color:black;
-      padding:15px 30px;
-      text-decoration:none;
-      border-radius:10px;
-      font-weight:bold;
-      display:inline-block;
-      margin-top:20px;
+    body {
+      background: var(--dark-bg);
+      color: var(--light-text);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(10, 10, 10, 0.95);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      border-bottom: 2px solid var(--primary-color);
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--primary-color);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--light-text);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-color);
+    }
+
+    .nav-links a.active {
+      color: var(--primary-color);
+      border-bottom: 2px solid var(--primary-color);
+      padding-bottom: 0.25rem;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--primary-color);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero {
+      margin-top: 80px;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+      padding: 60px 2rem;
+      text-align: center;
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero img {
+      width: 150px;
+      height: 150px;
+      margin-bottom: 2rem;
+      border-radius: 50%;
+      border: 3px solid var(--primary-color);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      font-weight: 900;
+    }
+
+    .hero .tagline {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      color: #cccccc;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      padding: 15px 35px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: var(--primary-color);
+      color: var(--dark-bg);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-color);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--primary-color);
+      border: 2px solid var(--primary-color);
+    }
+
+    .btn-secondary:hover {
+      background: var(--primary-color);
+      color: var(--dark-bg);
+      transform: translateY(-3px);
+    }
+
+    /* Sections */
+    section {
+      padding: 60px 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    /* About Section */
+    .about {
+      background: var(--secondary-bg);
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about-text h3 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-text p {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: #cccccc;
+      line-height: 1.8;
+    }
+
+    /* Features Grid */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .feature-card {
+      background: var(--secondary-bg);
+      padding: 2rem;
+      border-radius: 10px;
+      border-left: 4px solid var(--primary-color);
+      transition: all 0.3s ease;
+      text-align: left;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(255, 140, 0, 0.2);
+    }
+
+    .feature-card h4 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+
+    .feature-card p {
+      color: #cccccc;
+    }
+
+    /* Platforms Section */
+    .platforms {
+      background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+    }
+
+    .platforms-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .platform {
+      background: var(--secondary-bg);
+      padding: 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .platform:hover {
+      border-color: var(--primary-color);
+      background: rgba(255, 140, 0, 0.1);
+      transform: scale(1.05);
+    }
+
+    /* Pricing Section */
+    .pricing {
+      background: var(--secondary-bg);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .pricing-card {
+      background: #0a0a0a;
+      padding: 2.5rem;
+      border-radius: 10px;
+      border: 2px solid #333;
+      transition: all 0.3s ease;
+      text-align: center;
+      position: relative;
+    }
+
+    .pricing-card.featured {
+      border-color: var(--primary-color);
+      transform: scale(1.05);
+      box-shadow: 0 20px 40px rgba(255, 140, 0, 0.2);
+    }
+
+    .pricing-card.featured::before {
+      content: "MOST POPULAR";
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--primary-color);
+      color: var(--dark-bg);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+
+    .pricing-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .price {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+
+    .price-period {
+      color: #888;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .features-list {
+      text-align: left;
+      margin: 1.5rem 0;
+      color: #cccccc;
+    }
+
+    .features-list li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #333;
+      list-style: none;
+    }
+
+    .features-list li:before {
+      content: "✓ ";
+      color: var(--primary-color);
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+
+    .features-list li:last-child {
+      border-bottom: none;
+    }
+
+    /* FAQ Section */
+    .faq {
+      background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+    }
+
+    .faq-item {
+      background: var(--secondary-bg);
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #333;
+    }
+
+    .faq-question {
+      padding: 1.5rem;
+      background: #0a0a0a;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+      color: var(--light-text);
+      transition: all 0.3s ease;
+    }
+
+    .faq-question:hover {
+      background: rgba(255, 140, 0, 0.1);
+      color: var(--primary-color);
+    }
+
+    .faq-toggle {
+      color: var(--primary-color);
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.active .faq-toggle {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      padding: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      color: #cccccc;
+    }
+
+    .faq-item.active .faq-answer {
+      padding: 1.5rem;
+      max-height: 500px;
+    }
+
+    /* Blog Section */
+    .blog {
+      background: var(--secondary-bg);
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .blog-card {
+      background: #0a0a0a;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #333;
+      transition: all 0.3s ease;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary-color);
+      box-shadow: 0 15px 30px rgba(255, 140, 0, 0.2);
+    }
+
+    .blog-image {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+    }
+
+    .blog-content {
+      padding: 1.5rem;
+    }
+
+    .blog-date {
+      color: var(--primary-color);
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .blog-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .blog-card p {
+      color: #cccccc;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .read-more {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .read-more:hover {
+      color: var(--accent-color);
+      margin-right: 0.5rem;
+    }
+
+    /* Testimonials Section */
+    .testimonials {
+      background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .testimonial-card {
+      background: var(--secondary-bg);
+      padding: 2rem;
+      border-radius: 10px;
+      border-left: 4px solid var(--primary-color);
+      position: relative;
+    }
+
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      font-size: 4rem;
+      color: var(--primary-color);
+      opacity: 0.3;
+    }
+
+    .stars {
+      color: var(--primary-color);
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial-text {
+      color: #cccccc;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+
+    .artist-name {
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+
+    .artist-title {
+      color: #888;
+      font-size: 0.9rem;
+    }
+
+    /* Contact Section */
+    .contact {
+      background: var(--secondary-bg);
+      text-align: center;
+    }
+
+    .contact-form {
+      max-width: 600px;
+      margin: 2rem auto;
+      background: #0a0a0a;
+      padding: 2rem;
+      border-radius: 10px;
+      border: 1px solid #333;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem;
+      background: var(--secondary-bg);
+      color: var(--light-text);
+      border: 1px solid #333;
+      border-radius: 5px;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 10px rgba(255, 140, 0, 0.2);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    /* Footer */
+    footer {
+      background: #000;
+      padding: 3rem 2rem;
+      border-top: 2px solid var(--primary-color);
+      margin-top: 4rem;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-section h4 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section a {
+      color: #cccccc;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-section a:hover {
+      color: var(--primary-color);
+    }
+
+    .footer-section li {
+      margin-bottom: 0.5rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: var(--primary-color);
+      color: var(--dark-bg);
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      font-weight: bold;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-3px);
+      background: var(--accent-color);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid #333;
+      color: #888;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero .tagline {
+        font-size: 1.2rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .pricing-card.featured {
+        transform: scale(1);
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <img src="logo.png" width="200">
+  <!-- Navigation -->
+  <nav>
+    <a href="#home" class="logo">
+      <img src="logo.png" alt="Oritrend Logo">
+      Oritrend
+    </a>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="menu-toggle">☰</button>
+  </nav>
 
-  <p>
-    Distribute Your Music Worldwide
-  </p>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <img src="logo.png" alt="Oritrend Distribution Logo">
+    <h1>Empower Your Music</h1>
+    <h1 style="margin-top: -1rem;">Reach the World</h1>
+    <p class="tagline">Distribute your music to 150+ countries across Spotify, Apple Music, TikTok, and 50+ streaming platforms—in just days.</p>
+    <div class="cta-buttons">
+      <a href="#contact" class="btn btn-primary">Start Distributing</a>
+      <a href="#about" class="btn btn-secondary">Learn More</a>
+    </div>
+  </section>
 
-  <p>
-    Get your songs on Spotify, Apple Music,
-    TikTok, Boomplay, Audiomack,
-    YouTube Music & more.
-  </p>
+  <!-- About Section -->
+  <section class="about" id="about">
+    <h2>About Oritrend Distribution</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <h3>Your Gateway to Global Music Success</h3>
+        <p>At Oritrend Distribution, we believe every artist deserves a platform to shine. Founded on the principle that talent shouldn't be limited by geography or budget, we've created a streamlined, artist-centric music distribution platform.</p>
+        <p>Whether you're a bedroom producer, an emerging talent, or an established independent artist, we provide the tools and support to get your music heard by millions worldwide.</p>
+        <p>Our mission is simple: democratize music distribution. No hidden fees. No commission on your earnings. Just you, your music, and the world.</p>
+      </div>
+      <div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <h4>🚀 Lightning Fast</h4>
+            <p>Get your music live in 2-5 business days, not months.</p>
+          </div>
+          <div class="feature-card">
+            <h4>💰 Zero Commission</h4>
+            <p>Keep 100% of your streaming revenue. We only charge a one-time distribution fee.</p>
+          </div>
+          <div class="feature-card">
+            <h4>🌍 Global Reach</h4>
+            <p>Distribute to 150+ countries and 50+ streaming platforms simultaneously.</p>
+          </div>
+          <div class="feature-card">
+            <h4>🎨 Artist Focused</h4>
+            <p>Built by artists, for artists. We understand your journey.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSfzJcxEl37AAg3oXoJzSuNgi4yUMVaQ-O8Fs3h_UioRlTKpow/viewform?usp=publish-editor">
-    Submit Your Music
-  </a>
-<hr>
+  <!-- Features Section -->
+  <section id="features" style="background: #0a0a0a;">
+    <h2>Why Choose Oritrend?</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <h4>📊 Real-Time Analytics</h4>
+        <p>Track streams, downloads, and earnings across all platforms in one dashboard. Know exactly how your music is performing.</p>
+      </div>
+      <div class="feature-card">
+        <h4>🎯 Smart Release Strategy</h4>
+        <p>Pre-save campaigns, playlist pitching, and release scheduling to maximize your reach from day one.</p>
+      </div>
+      <div class="feature-card">
+        <h4>🆘 24/7 Artist Support</h4>
+        <p>Our dedicated support team is always available to help with technical issues, metadata updates, or platform questions.</p>
+      </div>
+      <div class="feature-card">
+        <h4>🎵 Unlimited Uploads</h4>
+        <p>On Pro and Label plans, distribute as many songs as you want with no restrictions.</p>
+      </div>
+      <div class="feature-card">
+        <h4>🌟 African Music Specialists</h4>
+        <p>Special focus on promoting African artists to global audiences on platforms like Boomplay and Audiomack.</p>
+      </div>
+      <div class="feature-card">
+        <h4>✏️ Easy Metadata Editing</h4>
+        <p>Update your music information, artwork, and details anytime before your release goes live.</p>
+      </div>
+    </div>
+  </section>
 
-<h2>About Oritrend Distribution</h2>
+  <!-- Platforms Section -->
+  <section class="platforms" id="platforms">
+    <h2>Platforms We Support</h2>
+    <p style="text-align: center; color: #cccccc; margin-bottom: 2rem;">Distribute to all major streaming services in one submission</p>
+    <div class="platforms-list">
+      <div class="platform">🎵 Spotify</div>
+      <div class="platform">🎧 Apple Music</div>
+      <div class="platform">📱 TikTok</div>
+      <div class="platform">▶️ YouTube Music</div>
+      <div class="platform">🎤 Boomplay</div>
+      <div class="platform">🎶 Audiomack</div>
+      <div class="platform">🎼 Deezer</div>
+      <div class="platform">🎹 Amazon Music</div>
+      <div class="platform">🌊 Tidal</div>
+      <div class="platform">+ 50+ More</div>
+    </div>
+  </section>
 
-<p>
-Oritrend Distribution helps independent artists distribute their music globally across major streaming platforms including Spotify, Apple Music, TikTok, Boomplay, Audiomack and YouTube Music.
-</p>
+  <!-- Pricing Section -->
+  <section class="pricing" id="pricing">
+    <h2>Simple, Transparent Pricing</h2>
+    <p style="text-align: center; color: #cccccc; margin-bottom: 2rem;">Choose a plan that fits your needs. No hidden fees, no commission on earnings.</p>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3>Starter</h3>
+        <div class="price">$9.99</div>
+        <div class="price-period">one-time payment</div>
+        <ul class="features-list">
+          <li>1 Single Release</li>
+          <li>All Streaming Platforms</li>
+          <li>Basic Analytics</li>
+          <li>Email Support</li>
+          <li>Music stays live forever</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Get Started</a>
+      </div>
 
-<hr>
+      <div class="pricing-card featured">
+        <h3>Artist</h3>
+        <div class="price">$24.99</div>
+        <div class="price-period">one-time payment</div>
+        <ul class="features-list">
+          <li>5 Track Releases</li>
+          <li>All Streaming Platforms</li>
+          <li>Detailed Analytics</li>
+          <li>Priority Email Support</li>
+          <li>Metadata Editing</li>
+          <li>Music stays live forever</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Choose Plan</a>
+      </div>
 
-<h2>Platforms We Support</h2>
+      <div class="pricing-card">
+        <h3>Pro</h3>
+        <div class="price">$49.99</div>
+        <div class="price-period">one-time payment</div>
+        <ul class="features-list">
+          <li>Unlimited Releases</li>
+          <li>All Streaming Platforms</li>
+          <li>Advanced Analytics</li>
+          <li>24/7 Priority Support</li>
+          <li>Playlist Pitching</li>
+          <li>Music stays live forever</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Upgrade</a>
+      </div>
 
-<p>
-Spotify • Apple Music • TikTok • Boomplay • Audiomack • YouTube Music • Deezer
-</p>
+      <div class="pricing-card">
+        <h3>Label</h3>
+        <div class="price">Custom</div>
+        <div class="price-period">contact us</div>
+        <ul class="features-list">
+          <li>Bulk Distribution</li>
+          <li>White-Label Solutions</li>
+          <li>API Access</li>
+          <li>Dedicated Account Manager</li>
+          <li>Custom Analytics</li>
+          <li>Flexible Terms</li>
+        </ul>
+        <a href="#contact" class="btn btn-secondary" style="width: 100%; margin-top: 1rem;">Contact Us</a>
+      </div>
+    </div>
+  </section>
 
-<hr>
+  <!-- Testimonials Section -->
+  <section class="testimonials" id="testimonials">
+    <h2>Success Stories From Our Artists</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p class="testimonial-text">"Oritrend made distributing my music so easy! My first single got on Spotify within 3 days. Highly recommended for independent artists!"</p>
+        <p class="artist-name">Amara Williams</p>
+        <p class="artist-title">Independent Artist, Nigeria</p>
+      </div>
 
-<h2>Why Choose Us?</h2>
+      <div class="testimonial-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p class="testimonial-text">"The customer support is amazing. They helped me update my metadata and everything was resolved in minutes. Best distribution service!"</p>
+        <p class="artist-name">Marcus Johnson</p>
+        <p class="artist-title">Hip-Hop Producer, USA</p>
+      </div>
 
-<p>
-✔ Fast Music Distribution<br>
-✔ Independent Artist Support<br>
-✔ Global Reach<br>
-✔ Affordable Services<br>
-✔ African Music Promotion
-</p>
+      <div class="testimonial-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p class="testimonial-text">"I've distributed with other platforms, but Oritrend is the fastest and most affordable. I keep 100% of my earnings!"</p>
+        <p class="artist-name">Zainab Hassan</p>
+        <p class="artist-title">Afrobeats Artist, Kenya</p>
+      </div>
 
-<hr>
+      <div class="testimonial-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p class="testimonial-text">"My music reached 50,000 streams in the first month. Oritrend's platform and support made all the difference in my career!"</p>
+        <p class="artist-name">David Chen</p>
+        <p class="artist-title">Electronic Artist, Singapore</p>
+      </div>
 
-<h2>Contact Us</h2>
+      <div class="testimonial-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p class="testimonial-text">"Finally, a distribution service that understands African artists. Boomplay integration is seamless!"</p>
+        <p class="artist-name">Blessing Okonkwo</p>
+        <p class="artist-title">Afrobeats Producer, Ghana</p>
+      </div>
 
-<p>
-Email: oritrenddistribution@gmail.com
-</p>
+      <div class="testimonial-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p class="testimonial-text">"The analytics dashboard is incredible. I can see exactly where my streams are coming from. Worth every penny!"</p>
+        <p class="artist-name">Sofia Rodriguez</p>
+        <p class="artist-title">Latin Artist, Spain</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq" id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div style="max-width: 800px; margin: 2rem auto;">
+      <div class="faq-item active">
+        <div class="faq-question">
+          <span>How quickly will my music be distributed to streaming platforms?</span>
+          <span class="faq-toggle">⌄</span>
+        </div>
+        <div class="faq-answer">
+          Your music will typically be live within 2-5 business days on most platforms. Spotify and Apple Music may take up to 2 weeks for official playlist consideration, but your music will be available for listeners immediately. We expedite the process as much as possible to get your work in front of your audience quickly.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Do you take a percentage of my streaming revenue?</span>
+          <span class="faq-toggle">⌄</span>
+        </div>
+        <div class="faq-answer">
+          No! We never take a commission on your earnings. We charge a one-time distribution fee, and 100% of your streaming revenue from Spotify, Apple Music, and all other platforms goes directly to you. What you earn is yours to keep.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Can I edit my song information after I submit it?</span>
+          <span class="faq-toggle">⌄</span>
+        </div>
+        <div class="faq-answer">
+          Yes! You can edit your song title, artist name, artwork, features, lyrics, and other metadata anytime before your music goes live. Once it's live on streaming platforms, some changes may take time to update across all services, but we'll help you manage this process smoothly.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Is there a limit to how many songs I can distribute?</span>
+          <span class="faq-toggle">⌄</span>
+        </div>
+        <div class="faq-answer">
+          It depends on your plan! The Starter plan allows 1 single per submission. The Artist plan allows up to 5 tracks. The Pro and Label plans have unlimited releases with no restrictions. You can distribute as much as you want, whenever you want.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What happens if my music violates copyright or platform policies?</span>
+          <span class="faq-toggle">⌄</span>
+        </div>
+        <div class="faq-answer">
+          We thoroughly review all submissions before distribution. If there are any copyright concerns or policy violations, we'll notify you immediately and work with you to resolve them. Our 24/7 support team provides guidance on proper metadata, rights clearance, and content policies to ensure your music gets approved.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section class="blog" id="blog">
+    <h2>Music Distribution Guides & Tips</h2>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <div class="blog-image">📝</div>
+        <div class="blog-content">
+          <div class="blog-date">May 24, 2026</div>
+          <h3>How to Prepare Your Music for Distribution: A Complete Guide</h3>
+          <p>Learn the essential steps to get your music ready for release. From mastering to artwork specifications, we cover everything you need to know.</p>
+          <a href="#" class="read-more">Read More →</a>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-image">🎯</div>
+        <div class="blog-content">
+          <div class="blog-date">May 22, 2026</div>
+          <h3>Maximizing Your Spotify Streams: Strategies for Independent Artists</h3>
+          <p>Discover proven tactics to grow your listener base on Spotify, from playlist pitching to social media promotion strategies.</p>
+          <a href="#" class="read-more">Read More →</a>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-image">🌍</div>
+        <div class="blog-content">
+          <div class="blog-date">May 20, 2026</div>
+          <h3>Breaking Into African Music Streaming Platforms: A Guide to Boomplay & Audiomack</h3>
+          <p>African music is booming globally. Learn how to optimize your presence on Boomplay and Audiomack to reach millions of listeners.</p>
+          <a href="#" class="read-more">Read More →</a>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-image">💰</div>
+        <div class="blog-content">
+          <div class="blog-date">May 18, 2026</div>
+          <h3>Understanding Streaming Revenue: How Much Do Artists Really Earn?</h3>
+          <p>Break down the numbers and understand exactly how much you can expect to earn from your music on different streaming platforms.</p>
+          <a href="#" class="read-more">Read More →</a>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-image">🎨</div>
+        <div class="blog-content">
+          <div class="blog-date">May 16, 2026</div>
+          <h3>The Art of Album Artwork: Design Tips That Get Noticed</h3>
+          <p>Your album cover is often the first thing listeners see. Get professional design tips to create artwork that stands out and gets saved.</p>
+          <a href="#" class="read-more">Read More →</a>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-image">🚀</div>
+        <div class="blog-content">
+          <div class="blog-date">May 14, 2026</div>
+          <h3>From Zero to Hero: A Roadmap for Emerging Independent Artists</h3>
+          <p>Starting your music career? Follow this step-by-step roadmap to build your brand, release music, and grow your fanbase from scratch.</p>
+          <a href="#" class="read-more">Read More →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <h2>Ready to Distribute Your Music?</h2>
+    <p style="color: #cccccc; margin-bottom: 2rem;">Fill out the form below and our team will get back to you within 24 hours</p>
+    
+    <div class="contact-form">
+      <form>
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="artist">Artist/Stage Name</label>
+          <input type="text" id="artist" name="artist" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="country">Country</label>
+          <input type="text" id="country" name="country">
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Tell us about your music</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Your Music</button>
+      </form>
+    </div>
+
+    <div style="margin-top: 3rem; padding: 2rem; background: #1a1a1a; border-radius: 10px; border: 1px solid #333;">
+      <h3 style="margin-bottom: 1rem;">Other Ways to Reach Us</h3>
+      <p>📧 <strong>Email:</strong> <a href="mailto:oritrenddistribution@gmail.com" style="color: var(--primary-color); text-decoration: none;">oritrenddistribution@gmail.com</a></p>
+      <p>📱 <strong>WhatsApp:</strong> Contact us for quick responses (coming soon)</p>
+      <p style="color: #888; margin-top: 1rem; font-size: 0.9rem;">Response time: Usually within 24 hours</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>About Oritrend</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#features">Our Features</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#blog">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#">Music Distribution Guide</a></li>
+          <li><a href="#">Artist Resources</a></li>
+          <li><a href="#">Contact Support</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Copyright Policy</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Follow Us</h4>
+        <p>Stay updated on music distribution tips and artist success stories</p>
+        <div class="social-links">
+          <a href="https://twitter.com/oritrenddist" title="Twitter">𝕏</a>
+          <a href="https://instagram.com/oritrenddist" title="Instagram">📸</a>
+          <a href="https://tiktok.com/@oritrenddist" title="TikTok">🎵</a>
+          <a href="https://youtube.com/@oritrenddist" title="YouTube">▶️</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Oritrend Distribution. All rights reserved. | Empowering Independent Artists Worldwide</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+    });
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', function() {
+        const item = this.parentElement;
+        item.classList.toggle('active');
+        
+        // Close other items
+        document.querySelectorAll('.faq-item').forEach(faq => {
+          if (faq !== item) {
+            faq.classList.remove('active');
+          }
+        });
+      });
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Form submission
+    document.querySelector('.contact-form form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for your submission! We will contact you soon.');
+      this.reset();
+    });
+
+    // Active nav link on scroll
+    window.addEventListener('scroll', function() {
+      let current = '';
+      const sections = document.querySelectorAll('section');
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (scrollY >= sectionTop - 200) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').slice(1) === current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
