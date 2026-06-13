@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing & Subscription - Oritrend Distribution</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #7C3AED;
+            --primary-dark: #6D28D9;
+            --primary-light: #A78BFA;
+            --accent: #EC4899;
+            --dark-bg: #0F172A;
+            --dark-secondary: #1E293B;
+            --light-text: #F1F5F9;
+            --light-text-secondary: #CBD5E1;
+            --border-color: #475569;
+            --success: #10B981;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--dark-bg);
+            color: var(--light-text);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+        }
+
+        .topnav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            z-index: 100;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-section img {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+        }
+
+        .logo-section h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .auth-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .auth-links a {
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .login-link {
+            color: var(--primary-light);
+        }
+
+        .login-link:hover {
+            background: rgba(124, 58, 237, 0.1);
+        }
+
+        .signup-link {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+        }
+
+        .signup-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(124, 58, 237, 0.3);
+        }
+
+        .main-content {
+            margin-top: 70px;
+            padding: 4rem 2rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 1rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            color: var(--light-text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .pricing-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .pricing-card {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(124, 58, 237, 0.2);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary);
+            transform: scale(1.05);
+            box-shadow: 0 25px 50px rgba(124, 58, 237, 0.3);
+        }
+
+        .pricing-card.featured::before {
+            content: "MOST POPULAR";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            box-shadow: 0 10px 20px rgba(124, 58, 237, 0.3);
+        }
+
+        .plan-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .plan-description {
+            color: var(--light-text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .price {
+            font-size: 2.75rem;
+            font-weight: 800;
+            color: var(--primary-light);
+            letter-spacing: -1px;
+            margin-bottom: 0.25rem;
+        }
+
+        .price-period {
+            color: var(--light-text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 1.5rem 0;
+            flex-grow: 1;
+        }
+
+        .features-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(124, 58, 237, 0.2);
+            color: var(--light-text-secondary);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .features-list li::before {
+            content: "✓";
+            color: var(--success);
+            font-weight: 700;
+            margin-right: 0.75rem;
+        }
+
+        .features-list li:last-child {
+            border-bottom: none;
+        }
+
+        .subscribe-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-top: 1rem;
+        }
+
+        .subscribe-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3);
+        }
+
+        .subscribe-btn:active {
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 2rem 1rem;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <div class="topnav">
+        <div class="logo-section">
+            <img src="logo.svg" alt="Oritrend">
+            <h2>Oritrend</h2>
+        </div>
+        <div class="auth-links">
+            <a href="auth.html" class="login-link">Login</a>
+            <a href="auth.html" class="signup-link">Sign Up</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="page-header">
+            <h1>Simple, Transparent Pricing 💳</h1>
+            <p>Choose the perfect plan for your music distribution journey. Start distributing today!</p>
+        </div>
+
+        <div class="pricing-container">
+            <!-- Free Plan -->
+            <div class="pricing-card">
+                <h3 class="plan-name">Free</h3>
+                <p class="plan-description">Perfect for testing</p>
+                <div class="price">$0</div>
+                <div class="price-period">forever free</div>
+                <ul class="features-list">
+                    <li>1 test upload</li>
+                    <li>Basic analytics</li>
+                    <li>Email support</li>
+                    <li>Music stays live 30 days</li>
+                </ul>
+                <button class="subscribe-btn" onclick="window.location.href='auth.html'">Get Started</button>
+            </div>
+
+            <!-- Artist Plan -->
+            <div class="pricing-card">
+                <h3 class="plan-name">Artist</h3>
+                <p class="plan-description">For independent artists</p>
+                <div class="price">$9.99</div>
+                <div class="price-period">per year</div>
+                <ul class="features-list">
+                    <li>5 releases per year</li>
+                    <li>All 50+ platforms</li>
+                    <li>Personal dashboard</li>
+                    <li>Basic analytics</li>
+                    <li>Email support</li>
+                    <li>Music stays live forever</li>
+                    <li>0% commission</li>
+                </ul>
+                <button class="subscribe-btn" onclick="selectPlan('artist')">Choose Plan</button>
+            </div>
+
+            <!-- Pro Plan -->
+            <div class="pricing-card featured">
+                <h3 class="plan-name">Pro</h3>
+                <p class="plan-description">For serious artists</p>
+                <div class="price">$19.99</div>
+                <div class="price-period">per year</div>
+                <ul class="features-list">
+                    <li>Unlimited releases</li>
+                    <li>All 50+ platforms</li>
+                    <li>Pro dashboard</li>
+                    <li>Advanced analytics</li>
+                    <li>Priority support</li>
+                    <li>Playlist pitching</li>
+                    <li>Music stays live forever</li>
+                    <li>0% commission</li>
+                </ul>
+                <button class="subscribe-btn" onclick="selectPlan('pro')">Choose Plan</button>
+            </div>
+
+            <!-- Label Plan -->
+            <div class="pricing-card">
+                <h3 class="plan-name">Label</h3>
+                <p class="plan-description">For labels & distributors</p>
+                <div class="price">$49.99</div>
+                <div class="price-period">per year</div>
+                <ul class="features-list">
+                    <li>Unlimited releases</li>
+                    <li>All 50+ platforms</li>
+                    <li>Multi-artist management</li>
+                    <li>Advanced analytics</li>
+                    <li>24/7 priority support</li>
+                    <li>API access</li>
+                    <li>Dedicated manager</li>
+                    <li>0% commission</li>
+                </ul>
+                <button class="subscribe-btn" onclick="selectPlan('label')">Choose Plan</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function selectPlan(plan) {
+            const user = JSON.parse(localStorage.getItem('user'));
+            if (!user) {
+                // Redirect to signup with plan selection
+                window.location.href = `auth.html?plan=${plan}`;
+            } else {
+                // Redirect to payment for logged-in users
+                window.location.href = `payment.html?plan=${plan}`;
+            }
+        }
+    </script>
+</body>
+</html>
