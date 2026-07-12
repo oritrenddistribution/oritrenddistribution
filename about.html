@@ -49,9 +49,43 @@
             top: 0;
             z-index: 100;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
-        nav a {
+        .nav-logo-section {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--light-text);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-logo-section:hover {
+            color: var(--primary-light);
+        }
+
+        .nav-logo-section img {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            object-fit: contain;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-logo-section:hover img {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(124, 58, 237, 0.2);
+        }
+
+        .nav-logo-section span {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        nav a.back-link {
             color: var(--light-text-secondary);
             text-decoration: none;
             font-weight: 600;
@@ -63,7 +97,7 @@
             border-radius: 8px;
         }
 
-        nav a:hover {
+        nav a.back-link:hover {
             color: var(--primary-light);
             background: rgba(124, 58, 237, 0.1);
         }
@@ -239,9 +273,25 @@
         @media (max-width: 768px) {
             nav {
                 padding: 1rem 1.5rem;
+                flex-wrap: wrap;
+                gap: 1rem;
             }
 
-            nav a {
+            .nav-logo-section {
+                order: 1;
+            }
+
+            .nav-logo-section img {
+                width: 36px;
+                height: 36px;
+            }
+
+            .nav-logo-section span {
+                display: none;
+            }
+
+            nav a.back-link {
+                order: 2;
                 padding: 0.5rem;
                 font-size: 0.9rem;
             }
@@ -291,9 +341,14 @@
                 padding: 0.875rem 1rem;
             }
 
-            nav a {
+            .nav-logo-section img {
+                width: 32px;
+                height: 32px;
+            }
+
+            nav a.back-link {
                 font-size: 0.85rem;
-                padding: 0.375rem;
+                padding: 0.375rem 0.75rem;
             }
 
             .container {
@@ -366,7 +421,11 @@
 </head>
 <body>
     <nav>
-        <a href="index.html">← Back to Home</a>
+        <a href="index.html" class="nav-logo-section">
+            <img src="logo-oritrend.png" alt="Oritrend Distribution Logo">
+            <span>Oritrend</span>
+        </a>
+        <a href="index.html" class="back-link">← Back to Home</a>
     </nav>
 
     <div class="container">
@@ -380,7 +439,7 @@
         </div>
 
         <h2>Who We Are</h2>
-        <p>Oritrend Distribution is a modern music distribution platform built by music enthusiasts for independent artists. We understand the challenges artists face in getting their music heard globally, and we've created a solution that eliminates barriers.</p>
+        <p>Oritrend Distribution is a modern music distribution platform built by music enthusiasts for independent artists. We understand the challenges artists face in getting their music heard, and we've created a solution that removes all the barriers.</p>
 
         <p>Our platform connects artists directly with over 150 countries and 50+ streaming platforms including Spotify, Apple Music, TikTok, YouTube Music, Boomplay, and Audiomack—all with zero commission on your earnings.</p>
 
@@ -478,7 +537,7 @@
         </ul>
 
         <h2>Join Thousands of <span class="gradient-text">Artists</span></h2>
-        <p>Artists worldwide are already using Oritrend Distribution to share their music with the world. From bedroom producers to professional musicians, we're helping independent artists achieve their dreams and reach listeners they never thought possible.</p>
+        <p>Artists worldwide are already using Oritrend Distribution to share their music with the world. From bedroom producers to professional musicians, we're helping independent artists achieve their dreams and reach global audiences.</p>
 
         <div class="highlight">
             <p><strong>Ready to distribute your music?</strong> Join us today and take the first step toward global recognition. Your next listener could be just one click away!</p>
