@@ -57,12 +57,27 @@
             display: flex;
             align-items: center;
             gap: 1rem;
+            text-decoration: none;
+            color: var(--light-text);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .logo-section:hover {
+            color: var(--primary-light);
         }
 
         .logo-section img {
             width: 40px;
             height: 40px;
             border-radius: 8px;
+            object-fit: contain;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .logo-section:hover img {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(124, 58, 237, 0.2);
         }
 
         .logo-section h2 {
@@ -425,8 +440,44 @@
                 padding: 1rem;
             }
 
+            .logo-section img {
+                width: 36px;
+                height: 36px;
+            }
+
+            .logo-section h2 {
+                display: none;
+            }
+
             .grid {
                 grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .topnav {
+                padding: 0.75rem 1rem;
+            }
+
+            .logo-section img {
+                width: 32px;
+                height: 32px;
+            }
+
+            .user-menu {
+                gap: 0.75rem;
+            }
+
+            .logout-btn {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.85rem;
+            }
+
+            .notification-icon,
+            .user-icon {
+                width: 36px;
+                height: 36px;
+                font-size: 1rem;
             }
         }
     </style>
@@ -434,10 +485,10 @@
 <body>
     <!-- Top Navigation -->
     <div class="topnav">
-        <div class="logo-section">
-            <img src="logo.svg" alt="Oritrend">
+        <a href="index.html" class="logo-section">
+            <img src="logo-oritrend.png" alt="Oritrend Distribution Logo">
             <h2>Oritrend</h2>
-        </div>
+        </a>
         <div class="user-menu">
             <div class="notification-icon" onclick="toggleNotifications()">
                 🔔
@@ -488,7 +539,7 @@
 
             <div class="section" style="margin-top: 2rem;">
                 <div class="section-title">Upload Your First Track</div>
-                <div class="upload-zone" id="uploadZone" ondrop="handleDrop(event)" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" onclick="document.getElementById('fileInput').click()">
+                <div class="upload-zone" id="uploadZone" ondrop="handleDrop(event)" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" onclick="document.getElementById('fileInput').click();">
                     <input type="file" id="fileInput" multiple accept="audio/*" style="display: none;" onchange="handleFileSelect(event)">
                     <div class="upload-zone-icon">🎵</div>
                     <div class="upload-zone-text">Drop your music files here or click to browse</div>
@@ -559,15 +610,15 @@
                 <form id="profileForm" style="margin-top: 1.5rem;">
                     <div style="margin-bottom: 1.5rem;">
                         <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Full Name</label>
-                        <input type="text" id="profileFullName" style="width: 100%; padding: 0.75rem; background: rgba(15, 23, 42, 0.5); border: 1px solid var(--border-color); border-radius: 8px; color: var(--light-text);">
+                        <input type="text" id="profileFullName" style="width: 100%; padding: 0.75rem; background: rgba(15, 23, 42, 0.5); border: 1px solid var(--border-color); border-radius: 8px; color: var(--light-text);" placeholder="Your full name">
                     </div>
                     <div style="margin-bottom: 1.5rem;">
                         <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Artist Name</label>
-                        <input type="text" id="profileArtistName" style="width: 100%; padding: 0.75rem; background: rgba(15, 23, 42, 0.5); border: 1px solid var(--border-color); border-radius: 8px; color: var(--light-text);">
+                        <input type="text" id="profileArtistName" style="width: 100%; padding: 0.75rem; background: rgba(15, 23, 42, 0.5); border: 1px solid var(--border-color); border-radius: 8px; color: var(--light-text);" placeholder="Your artist name">
                     </div>
                     <div style="margin-bottom: 1.5rem;">
                         <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Email Address</label>
-                        <input type="email" id="profileEmail" style="width: 100%; padding: 0.75rem; background: rgba(15, 23, 42, 0.5); border: 1px solid var(--border-color); border-radius: 8px; color: var(--light-text);" readonly>
+                        <input type="email" id="profileEmail" style="width: 100%; padding: 0.75rem; background: rgba(15, 23, 42, 0.5); border: 1px solid var(--border-color); border-radius: 8px; color: var(--light-text);" placeholder="your@email.com">
                     </div>
                     <button type="submit" class="btn" style="margin-top: 1rem;">Save Changes</button>
                 </form>
@@ -578,15 +629,15 @@
                 <form id="passwordForm" style="margin-top: 1.5rem;">
                     <div style="margin-bottom: 1.5rem;">
                         <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Current Password</label>
-                        <input type="password" id="currentPassword" style="width: 100%; padding: 0.75rem; background: rgba(15, 23, 42, 0.5); border: 1px solid var(--border-color); border-radius: 8px; color: var(--light-text);">
+                        <input type="password" id="currentPassword" style="width: 100%; padding: 0.75rem; background: rgba(15, 23, 42, 0.5); border: 1px solid var(--border-color); border-radius: 8px; color: var(--light-text);" placeholder="Enter current password">
                     </div>
                     <div style="margin-bottom: 1.5rem;">
                         <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">New Password</label>
-                        <input type="password" id="newPassword" style="width: 100%; padding: 0.75rem; background: rgba(15, 23, 42, 0.5); border: 1px solid var(--border-color); border-radius: 8px; color: var(--light-text);">
+                        <input type="password" id="newPassword" style="width: 100%; padding: 0.75rem; background: rgba(15, 23, 42, 0.5); border: 1px solid var(--border-color); border-radius: 8px; color: var(--light-text);" placeholder="Enter new password">
                     </div>
                     <div style="margin-bottom: 1.5rem;">
                         <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Confirm Password</label>
-                        <input type="password" id="confirmNewPassword" style="width: 100%; padding: 0.75rem; background: rgba(15, 23, 42, 0.5); border: 1px solid var(--border-color); border-radius: 8px; color: var(--light-text);">
+                        <input type="password" id="confirmNewPassword" style="width: 100%; padding: 0.75rem; background: rgba(15, 23, 42, 0.5); border: 1px solid var(--border-color); border-radius: 8px; color: var(--light-text);" placeholder="Confirm new password">
                     </div>
                     <button type="submit" class="btn" style="margin-top: 1rem;">Update Password</button>
                 </form>
